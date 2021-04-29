@@ -1,2 +1,2 @@
 # progra_web
-Codigo de clase
+Repositorio principal de ejercicios vistos en clase
