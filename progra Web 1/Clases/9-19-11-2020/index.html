@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tetris</title>
+  </head>
+  <body>
+    <h1>Tetris</h1>
+
+    <div class="js-root"></div>
+
+    <script type="application/javascript">
+      const root = document.querySelector("js-root");
+
+      const piezas = {
+        O: [{ x: 0, y: 0 }, { x: 0, y: 1 }, { x: 1, y: 0 }, { x: 1, y: 1 }]
+      };
+
+      let state = {
+        piezaActiva: "O",
+        posicionPiezaActiva: { x: 5, y: 10 },
+        casillasOcupadas: [
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+      };
+
+      const render = state => {
+        root.innerHTML = "";
+
+        for (let i = 0; i < state.casillasOcupadas.length; ++i) {
+          const fila = state.casillasOcupadas[i];
+          for (let j = 0; j < fila.length; ++j) {
+            const casilla = fila[j];
+            const elementoCasilla = document.createElement("div");
+            elementoCasilla.classList.add("casilla");
+            if (casilla === 0) {
+              elementoCasilla.classList.add("vacia");
+            } else {
+              elementoCasilla.classList.add("llena");
+            }
+            root.appendChild(elementoCasilla);
+          }
+        }
+        
+        const pieza = piezas[state.piezaActiva]
+        for (let i = 0; i < pieza.length; ++i) {
+          // Renderizar pieza activa.
+        }
+      };
+
+      const seAsienta = state => {
+        return false;
+      };
+
+      const girarPieza = state => {
+        return state;
+      };
+
+      const moverPieza = (state, direccion) => {
+        return state;
+      };
+
+      setInterval(() => {
+        // bajar pieza, comprobar asentado, ...
+        state = moverPieza(state, "abajo")
+        render(state)
+      }, 500);
+
+      document.addEventListener("keydown", (event) => {
+        // girar / mover
+        if (!event.esFlechaIzquierdaODerecha) return;
+        state = moverPieza(state, event.esFlechaIzquierda ? "izquierda" : "derecha")
+      });
+    </script>
+  </body>
+</html>
