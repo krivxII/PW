@@ -1,0 +1,65 @@
+html {
+    background-color: #fff;
+  }
+  
+  .cuadricula {
+    height: 500px;
+    width: 500px;
+    line-height: 0;
+  }
+  
+  .casilla {
+    background-color: #aaa;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    position: relative;
+  }
+  
+  .mina {
+    background-color: black;
+  }
+  
+  .vacia {
+    background-color: white;
+  }
+  
+  .casilla::after {
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    font-size: 20px;
+  }
+  
+  .vacia-1::after {
+    content: "1";
+  }
+  
+  .vacia-2::after {
+    content: "2";
+  }
+  
+  .vacia-3::after {
+    content: "3";
+  }
+  
+  .vacia-4::after {
+    content: "4";
+  }
+  
+  .vacia-5::after {
+    content: "5";
+  }
+  
+  .vacia-6::after {
+    content: "6";
+  }
+  
+  .vacia-7::after {
+    content: "7";
+  }
+  
+  .vacia-8::after {
+    content: "8";
+  }
+  
