@@ -1,0 +1,77 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  
+ /*Juego centrado y con el fondo negro*/
+  body {
+    background-color: black;
+  }
+  
+  body > div {
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  
+  /*Cada recuadro de juego tiene las mismas dimensiones y está junto a otro*/
+  .tile {
+    width: 50px;
+    height: 50px;  
+    /* Para que estén juntos*/
+    display: inline-block;
+    vertical-align: top;
+  }
+   
+  
+  /*Pacman puede comer monedas pero choca contra muros*/
+  /* Muros */
+  .wall {
+    background-color: blue;
+    border: 2px solid cornflowerblue;
+  }
+  
+  /* Monedas */
+  .coin {
+    background-color: yellow;
+    border-radius: 50%;
+    transform: scale(0.3);
+  }
+  
+  
+  /* Utilizamoz 4 png para orientar a pacman mirando hacia donde se mueve*/
+  .pacman {    
+    background-image: url('https://puu.sh/EY4Sx/ec2f387459.png');
+  }
+  
+  .left {
+    background-image: url('https://puu.sh/EY4Sw/e4dd55ec2a.png');
+  }
+  
+  .up {
+    background-image: url('https://puu.sh/EY4Sv/a518b3c0b0.png');
+  }
+  
+  .down {
+    background-image: url('https://puu.sh/EY4Sy/f2536ea468.png');
+  }
+  
+.mizRight {
+  background-image: url('https://puu.sh/EZ4P8/3383383187.png');
+}
+
+.mizLeft {
+  background-image: url('https://puu.sh/EZ4OA/8b919d9dd7.png');
+}
+
+.mizUp {
+  background-image: url('https://puu.sh/EZ4Pn/4ea230ccaf.png');
+}
+
+.mizDown {
+  background-image: url('https://puu.sh/EZ4Pc/ce21886622.png');
+}

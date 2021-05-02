@@ -1,0 +1,56 @@
+mutation createPlayer {
+  createPlayer(name: "John") {
+    name
+    id
+  }
+}
+
+mutation createGame {
+  createGame(
+    playerId: "1318af09-7340-40c9-882b-7c0a7cbe1033"
+    initialState: [[ALIVE, ALIVE, ALIVE],
+                   [ALIVE, DEAD,  ALIVE],
+                   [ALIVE, ALIVE, ALIVE]]
+  ) {
+    id
+    currentGeneration
+    initialState
+  }
+}
+
+mutation stepInTime {
+  stepInTime(
+    playerId: "1318af09-7340-40c9-882b-7c0a7cbe1033"
+    gameId: "0a728a61-a90b-41db-b375-88f977e0c1ba"
+  ) {
+    id
+    currentGeneration
+    initialState
+    currentState
+  }
+}
+
+query getPlayer {
+  player(id: "1318af09-7340-40c9-882b-7c0a7cbe1033") {
+    id
+    name
+    games {
+      id
+      currentGeneration
+      initialState
+      currentState
+    }
+  }
+}
+
+query getAllPlayers {
+  allPlayers {
+    id
+    name
+    games {
+      id
+      currentGeneration
+      initialState
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "demo-graphql",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "PORT=5000 node ./src/index.js",
+      "watch": "PORT=5000 nodemon --inspect ./src/index.js",
+      "test": "mocha './src/**/*.test.js'",
+      "debug": "node --inspect-brk node_modules/.bin/mocha './src/**/*.test.js'"
+    },
+    "keywords": [],
+    "author": "Gerardo Munguia",
+    "license": "ISC",
+    "engines": {
+      "node": "14.x"
+    },
+    "dependencies": {
+      "graphql-yoga": "^1.18.3",
+      "joi": "^17.4.0",
+      "node-fetch": "^2.6.1",
+      "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+      "chai": "^4.3.4",
+      "eslint": "^7.25.0",
+      "mocha": "^8.3.2",
+      "nodemon": "^2.0.7",
+      "prettier": "^2.2.1",
+      "sinon": "^10.0.0"
+    }
+  }
+  
