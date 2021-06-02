@@ -1,0 +1,17 @@
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60px;
+    height: 80px;
+    box-shadow: 5px 5px;
+    border-radius: 8px;
+    border: 5px solid black;
+  }
+  
+
+  .cardNumber {
+    text-align: center;
+  }
+  

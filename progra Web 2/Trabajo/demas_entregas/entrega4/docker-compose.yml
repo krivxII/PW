@@ -1,0 +1,47 @@
+version: "3"
+
+networks:
+  custom:
+
+services:
+  web:
+    container_name: web
+    build:
+      context: ./services/web
+      # `args` is used to make environment variables visible during the build. See https://docs.docker.com/compose/compose-file/compose-file-v3/#environment.
+      args:
+        - K_SERVER_URL=http://localhost:3002
+    ports:
+      - 3000:80
+    networks:
+      - custom
+
+  graphql_server:
+    container_name: graphql
+    build: ./services/stats_server
+    ports:
+      - 4000:4000
+    networks:
+      - custom
+
+  controller_server:
+    container_name: controller
+    build: ./services/controller_server
+    ports:
+      - 3002:3002
+    networks:
+      - custom
+    environment:
+      - K_SERVER_URL=http://localhost:3002
+      - C_SERVER_URL=http://localhost:5001
+      - G_SERVER_URL=http://localhost:4000
+
+  game_server:
+    container_name: game
+    build: ./services/game_server
+    networks:
+      - custom
+    environment:
+      - K_SERVER_URL=http://localhost:3002
+      - C_SERVER_URL=http://localhost:5001
+      - G_SERVER_URL=http://localhost:4000

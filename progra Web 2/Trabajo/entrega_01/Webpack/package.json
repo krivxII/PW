@@ -1,0 +1,55 @@
+{
+  "name": "React-Babel-Webpack",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack serve --open --config webpack.config.js",
+    "server": "node server.js",
+    "giter": "git add . && git commit -m '-' && git push "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krivxII/React-Babel-Webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krivxII/React-Babel-Webpack/issues"
+  },
+  "homepage": "https://github.com/krivxII/React-Babel-Webpack#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-react": "^7.13.13",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
+    "eslint": "^7.26.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^2.5.4",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-middleware": "^4.1.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^5.2.0",
+    "react-toastify": "^7.0.4"
+  }
+}

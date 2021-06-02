@@ -1,0 +1,18 @@
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dfdfff;
+  }
+  
+ .li {
+    float: left;
+    padding: 10px;
+  }
+  .li2 {
+    float: right;
+    padding: 10px;
+  }
+  
+  

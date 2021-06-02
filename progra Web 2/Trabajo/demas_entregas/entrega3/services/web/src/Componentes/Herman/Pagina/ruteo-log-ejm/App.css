@@ -1,0 +1,12 @@
+.body {
+    background: rgb(185, 174, 174);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .Toastify__toast-body{
+    white-space: pre-line;
+  }

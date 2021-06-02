@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "9f12d23e-d339-4bd3-bc66-b523b83ce099",
+		"name": "demo-uneat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{ADDRESS}}/hello",
+					"host": [
+						"{{ADDRESS}}"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/echo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"foo\": \"bar\"\n}"
+				},
+				"url": {
+					"raw": "{{ADDRESS}}/echo",
+					"host": [
+						"{{ADDRESS}}"
+					],
+					"path": [
+						"echo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/life",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t[0, 0, 0],\n\t[1, 1, 1],\n\t[0, 0, 0]\n]"
+				},
+				"url": {
+					"raw": "{{ADDRESS}}/life",
+					"host": [
+						"{{ADDRESS}}"
+					],
+					"path": [
+						"life"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/life",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t[0, 0, 0, 0, 0],\n\t[0, 0, 0, 0, 0],\n\t[0, 1, 1, 1, 0],\n\t[0, 0, 0, 0, 0],\n\t[0, 0, 0, 0, 0]\n]"
+				},
+				"url": {
+					"raw": "{{ADDRESS}}/life",
+					"host": [
+						"{{ADDRESS}}"
+					],
+					"path": [
+						"life"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/life/next",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t[0, 0, 0],\n\t[1, 1, 1],\n\t[0, 0, 0]\n]"
+				},
+				"url": {
+					"raw": "{{ADDRESS}}/life/next",
+					"host": [
+						"{{ADDRESS}}"
+					],
+					"path": [
+						"life",
+						"next"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
