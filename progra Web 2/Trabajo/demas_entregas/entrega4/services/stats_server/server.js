@@ -95,4 +95,4 @@ console.log(text)
 };
 const server = new GraphQLServer({ typeDefs, resolvers })
 
-server.start({ port: 4552, playground: '/graphiql' }, () => console.log('Server started at 4000.'))
+server.start({ port: process.env.POR||4552, playground: '/graphiql' }, () => console.log('Server started at 4000.'))
