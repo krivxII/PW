@@ -1,5 +1,6 @@
 import {ModificarUsuario} from "../../../Persistencia/persistenciaUsuario" 
 import { guardarPartida } from "../../../Persistencia/persistenciaPartida";
+const K_server =  process.env.K_SERVER_URL ||"http://localhost:8084"
 async function flip(carta, SuperState, setSuperState, openModal,auth) {
 
 
@@ -15,7 +16,7 @@ async function flip(carta, SuperState, setSuperState, openModal,auth) {
     redirect: 'follow'
   };
   console.log("fliping")
- const response = await fetch("http://localhost:8084/flip", requestOptions)
+ const response = await fetch(K_server+"/flip", requestOptions)
  const newState = await response.json();  
  
 
@@ -75,7 +76,7 @@ async function flipAllCards(SuperState, setSupertate) {
     redirect: 'follow'
   };
   
- const response = await fetch("http://localhost:8084/flipall", requestOptions)
+ const response = await fetch(K_server+"/flipall", requestOptions)
  const text = await response.json();  
 
 

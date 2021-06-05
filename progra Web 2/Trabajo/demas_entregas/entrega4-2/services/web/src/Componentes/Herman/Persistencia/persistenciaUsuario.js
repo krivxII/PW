@@ -1,5 +1,5 @@
 import {guardarPartida} from "./persistenciaPartida"
-
+const K_server =  process.env.K_SERVER_URL ||"http://localhost:8084"
 
 async function ModificarUsuario(SuperState,usuario,ganadas,perdidas,partidas, auth) {
   
@@ -15,7 +15,7 @@ let raw = JSON.stringify({usuario,ganadas,perdidas,partidas});
     redirect: 'follow'
   };
   
-  const response =  await fetch("http://localhost:8084/modificarUsuario", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
+  const response =  await fetch(K_server+"/modificarUsuario", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
  
 console.log(response)
 
@@ -95,7 +95,7 @@ async function ObtenerUsuario(usuario, auth, history,token="nono") {//listo no s
     redirect: 'follow'
   };
   
-  const response = await fetch("http://localhost:8084/", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
+  const response = await fetch(K_server, requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
   
   
   
@@ -135,7 +135,7 @@ async function CrearUsuario(nombre,usuario,contraseña, auth, history ) {//nuevo
     redirect: 'follow'
   };
   
-  const response =  await fetch("http://localhost:8084/registrarUsuario", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
+  const response =  await fetch(K_server+"/registrarUsuario", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
   
   
   

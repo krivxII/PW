@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import {CrearUsuario,ObtenerUsuario} from "../../../Persistencia/persistenciaUsuario"
-
+const K_server =  process.env.K_SERVER_URL ||"http://localhost:8084"
 const toastOpt = {
     position: "top-right",
     autoClose: 5000,
@@ -27,7 +27,7 @@ async function iniciarSession(usuario, contraseña, auth, history) {
       redirect: 'follow'
     };
     
-    const response =  await fetch("http://localhost:8084/iniciarSession", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
+    const response =  await fetch(k_server+"/iniciarSession", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
     
     
     
@@ -71,7 +71,7 @@ async function destruirToken() {
             redirect: 'follow'
         };
 
-        const response = await fetch(`http://localhost:8084/destruirToken`, requestOptions)
+        const response = await fetch(K_server+`/destruirToken`, requestOptions)
             .then(res =>  {return {ok: res.ok, status: res.status} } );
 
         let mensaje;
@@ -115,7 +115,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-const response = await fetch("http://localhost:8084/registrarUsuario", requestOptions)
+const response = await fetch(K_server+"/registrarUsuario", requestOptions)
 .then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
 
 
@@ -159,9 +159,6 @@ export { registrar, iniciarSession, validarToken, destruirToken };
 
 
 
-
-
-
 async function validarToken(auth, history) {
 
     console.log("tratando de validar token")
@@ -179,7 +176,7 @@ console.log(token)
             redirect: 'follow'
         };
         
-        const response = await fetch("http://localhost:8084/validarToken", requestOptions)
+        const response = await fetch(K_server+"/validarToken", requestOptions)
             .then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
 
 

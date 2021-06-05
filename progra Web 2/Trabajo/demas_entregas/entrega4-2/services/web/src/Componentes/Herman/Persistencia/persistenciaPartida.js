@@ -1,3 +1,4 @@
+const K_server =  process.env.K_SERVER_URL ||"http://localhost:8084"
 async function guardarPartida(Props) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -12,7 +13,7 @@ async function guardarPartida(Props) {
     redirect: 'follow'
   };
   
-  const response = await fetch("http://localhost:8084/guardarPartida", requestOptions)
+  const response = await fetch(K_server+"/guardarPartida", requestOptions)
   
 
 

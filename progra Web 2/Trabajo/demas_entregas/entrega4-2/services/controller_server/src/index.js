@@ -6,6 +6,9 @@ const fetch = require('node-fetch');
 
 const app = new Koa();
 const router = new Router();
+const G_server =process.env.G_SERVER_URL || "http://localhost:4000/" ;
+const E_server= process.env.E_SERVER_URL ||"http://localhost:8085/";
+
 
 
 router.post("/tehe", async(ctx) => {
@@ -174,7 +177,7 @@ async function CrearUsuario(usuario,contraseña) {
     variables: {}
   })
 
-  const response = await fetch("http://localhost:4000/", {
+  const response = await fetch(G_server, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
@@ -273,7 +276,7 @@ async function ObtenerUsuario(usuario,token="nono") {
     redirect: 'follow'
   };
   
-  const response = await fetch("http://localhost:4000/", requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
+  const response = await fetch(G_server, requestOptions).then(res => res.json().then(data => ({ ok: res.ok, status: res.status, body: data })));
  
 
 
@@ -312,7 +315,7 @@ async function flip(carta, SuperState) {
       body: raw,
       redirect: 'follow'
   };
-  const response = await fetch("http://localhost:8085/flip", requestOptions)
+  const response = await fetch(E_server+"flip", requestOptions)
   const newState = await response.json();  
 
  
@@ -357,7 +360,7 @@ async function flipAllCards(SuperState, setSupertate) {
     redirect: 'follow'
   };
   
- const response = await fetch("http://localhost:8085/flipall", requestOptions)
+ const response = await fetch(E_server+"flipall", requestOptions)
  const text = await response.json();  
  
  console.log(response);
@@ -495,7 +498,7 @@ async function guardarPartida(Props) {
       redirect: 'follow'
     };
     
-    const response =  await  fetch("http://localhost:4000/", requestOptions)
+    const response =  await  fetch(G_server, requestOptions)
     
     
   
@@ -548,7 +551,7 @@ async function guardarPartida(Props) {
   };
   
   
-  const response =  await fetch("http://localhost:4000/", requestOptions) 
+  const response =  await fetch(G_server, requestOptions) 
 console.log(response)
 
   let mensaje;
