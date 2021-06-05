@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../Carta/Card.jsx"
-const ruta = process.env.K_SERVER_URL
+const ruta = process.env.C_SERVER_URL
 
 async function crearStatePartida(nombre,id,setSuperState) {
 
