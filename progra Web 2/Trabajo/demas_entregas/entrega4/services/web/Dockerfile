@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 ARG k_SERVER_URL
-ENV k_SERVER_URL $k_SERVER_URL
+ENV k_SERVER_URL $K_SERVER_URL
 RUN npm run build
 
 FROM nginx:alpine
