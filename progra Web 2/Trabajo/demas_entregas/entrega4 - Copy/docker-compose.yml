@@ -11,8 +11,9 @@ services:
       # `args` is used to make environment variables visible during the build. See https://docs.docker.com/compose/compose-file/compose-file-v3/#environment.
       args:
         - K_SERVER_URL=http://localhost:3002
+        - E_SERVER_URL=http://localhost:5001
     ports:
-      - 3000:80
+      - 80:80
     networks:
       - custom
 
@@ -34,14 +35,16 @@ services:
     environment:
       - K_SERVER_URL=http://localhost:3002
       - E_SERVER_URL=http://localhost:5001
-      - G_SERVER_URL=http://localhost:4000
+      - G_SERVER_URL=http://localhost:4000/
 
   game_server:
     container_name: game
     build: ./services/game_server
+    ports:
+      - 5001:5001
     networks:
       - custom
     environment:
       - K_SERVER_URL=http://localhost:3002
       - E_SERVER_URL=http://localhost:5001
-      - G_SERVER_URL=http://localhost:4000
+      - G_SERVER_URL=http://localhost:4000/

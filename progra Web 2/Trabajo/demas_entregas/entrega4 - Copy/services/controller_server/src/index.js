@@ -7,8 +7,15 @@ const fetch = require('node-fetch');
 const app = new Koa();
 const router = new Router();
 
-const G_ruta= process.env.G_SERVER_URL ||  "http://localhost:4000/";
+console.log("-------------------")
+console.log(process.env.G_SERVER_URL); console.log(process.env.E_SERVER_URL)
+console.log("-------------------")
+const G_ruta= process.env.G_SERVER_URL || "http://localhost:4000/";
 const E_ruta= process.env.E_SERVER_URL || "http://localhost:8085"
+
+console.log("-------------------")
+console.log(G_ruta); console.log(E_ruta)
+console.log("-------------------")
 
 
 router.post("/tehe", async(ctx) => {
@@ -260,7 +267,10 @@ return {error:"error 400 en iniciar session"}
 
 async function ObtenerUsuario(usuario,token="nono") {
 
-  console.log("tratando de obtener Usuario de persistencia  ")
+
+  
+  console.log("tratando de obtener Usuario de persistencia 22 ")
+  console.log(G_ruta)
   let headers= {
     "Content-Type": "application/json"
   }

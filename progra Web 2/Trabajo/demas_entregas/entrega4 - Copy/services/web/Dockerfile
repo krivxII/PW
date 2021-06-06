@@ -5,6 +5,8 @@ RUN npm install
 COPY . .
 ARG K_SERVER_URL
 ENV K_SERVER_URL $K_SERVER_URL
+ARG E_SERVER_URL
+ENV E_SERVER_URL $E_SERVER_URL
 RUN npm run build
 
 FROM nginx:alpine

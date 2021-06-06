@@ -50,7 +50,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <fieldset>
           <label>
-            <p>Name</p>
+            <p>Name herman</p>
             <input name="name" onChange={handleChange}/>
             <p>UserName</p>
             <input name="username" onChange={handleChange}/>
