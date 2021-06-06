@@ -17,6 +17,9 @@ const toastOpt = {
 
 async function iniciarSession(usuario, contraseña, auth, history) {
 
+    console.log(k_server)
+    console.log("------------------------------------------------")
+    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     

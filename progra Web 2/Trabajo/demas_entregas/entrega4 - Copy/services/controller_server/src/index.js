@@ -43,7 +43,7 @@ router.post("/iniciarSession", async(ctx) => {
   // 2. return state
   console.log("--------------------")
 
-  console.log()
+  console.log("im here x2")
   ctx.response.set("Content-Type", "application/json");
   ctx.body = JSON.stringify(await iniciarSession(ctx.request.body.username,ctx.request.body.password));
 });
@@ -224,6 +224,8 @@ console.log(response)
 
 async function iniciarSession(usuario, contraseña ) {
 
+  console.log("tambien paso por aca")
+
   let headers= {
     "Content-Type": "application/json"
   }
@@ -257,6 +259,8 @@ return {error:"error 400 en iniciar session"}
   }
   else if ((300 > response.status) && (response.status > 199)) {
 
+    console.log("y aca")
+    console.log(usuario)
      return await ObtenerUsuario(usuario,response.body.sessionToken)
     
       

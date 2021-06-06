@@ -1,7 +1,8 @@
 version: "3"
 
 networks:
-  custom:
+  app-network:
+    driver: bridge
 
 services:
   web:
@@ -13,17 +14,17 @@ services:
         - K_SERVER_URL=http://localhost:3002
         - E_SERVER_URL=http://localhost:5001
     ports:
-      - 80:80
+      - 8080:80
     networks:
-      - custom
+      - app-network
 
   graphql_server:
     container_name: graphql
     build: ./services/stats_server
     ports:
-      - 4000:4000
+      - 4004:4004
     networks:
-      - custom
+      - app-network
 
   controller_server:
     container_name: controller
@@ -31,11 +32,11 @@ services:
     ports:
       - 3002:3002
     networks:
-      - custom
+      - app-network
     environment:
       - K_SERVER_URL=http://localhost:3002
-      - E_SERVER_URL=http://localhost:5001
-      - G_SERVER_URL=http://localhost:4000/
+      - E_SERVER_URL=http://game:5001
+      - G_SERVER_URL=http://graphql:4004/
 
   game_server:
     container_name: game
@@ -43,8 +44,8 @@ services:
     ports:
       - 5001:5001
     networks:
-      - custom
+      - app-network
     environment:
       - K_SERVER_URL=http://localhost:3002
       - E_SERVER_URL=http://localhost:5001
-      - G_SERVER_URL=http://localhost:4000/
+      - G_SERVER_URL=http://localhost:4004/
