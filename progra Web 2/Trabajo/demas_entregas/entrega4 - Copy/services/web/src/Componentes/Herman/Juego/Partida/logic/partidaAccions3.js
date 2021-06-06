@@ -1,6 +1,7 @@
 import {ModificarUsuario} from "../../../Persistencia/persistenciaUsuario" 
 import { guardarPartida } from "../../../Persistencia/persistenciaPartida";
-const k_server = process.env.K_SERVER_URL || "http://localhost:8083" 
+//const k_server = process.env.K_SERVER_URL || "http://localhost:8083" 
+const k_server = "http://localhost:8083" 
 async function flip(carta, SuperState, setSuperState, openModal,auth) {
 
 

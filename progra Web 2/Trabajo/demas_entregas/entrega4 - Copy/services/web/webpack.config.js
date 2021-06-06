@@ -21,7 +21,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ESLintPlugin(),
-    new webpack.EnvironmentPlugin(["E_SERVER_URL","K_SERVER_URL"]),
+    //new webpack.EnvironmentPlugin(["E_SERVER_URL","K_SERVER_URL"]),
   ],
   /////////////////////////////////////////////////////
   mode: "development",

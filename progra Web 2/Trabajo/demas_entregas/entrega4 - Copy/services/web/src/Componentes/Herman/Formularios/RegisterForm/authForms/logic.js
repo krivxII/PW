@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import {CrearUsuario,ObtenerUsuario} from "../../../Persistencia/persistenciaUsuario"
-const k_server = process.env.K_SERVER_URL || "http://localhost:8083"
+//const k_server = process.env.K_SERVER_URL || "http://localhost:8083"
+const k_server =  "http://localhost:8083"
 
 const toastOpt = {
     position: "top-right",

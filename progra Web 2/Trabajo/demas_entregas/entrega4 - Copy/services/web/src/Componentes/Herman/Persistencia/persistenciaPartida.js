@@ -1,4 +1,5 @@
-const k_server =process.env.K_SERVER_URL || "http://localhost:8083"
+//const k_server =process.env.K_SERVER_URL || "http://localhost:8083"
+const k_server = "http://localhost:8083"
 async function guardarPartida(Props) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
