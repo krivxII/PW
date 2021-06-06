@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../Carta/Card.jsx"
-const e_server = "http://localhost:8085" 
+const e_server = process.env.E_SERVER_URL || "http://localhost:8085" 
 async function crearStatePartida(nombre,id,setSuperState) {
 
     var requestOptions = {
@@ -9,7 +9,7 @@ async function crearStatePartida(nombre,id,setSuperState) {
       };
       
      
-    const response = await  fetch("e_server+"/flip", requestOptions)
+    const response = await  fetch(e_server+"/flip", requestOptions)
     const text = await response.json();  
 
     const partida = text;
