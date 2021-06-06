@@ -21,7 +21,13 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ESLintPlugin(),
-    new webpack.EnvironmentPlugin(["E_SERVER_URL","K_SERVER_URL"]),
+    new webpack.EnvironmentPlugin({
+      E_SERVER_URL: "http://localhost:8085", // use 'development' unless process.env.NODE_ENV is defined
+    }),
+    new webpack.EnvironmentPlugin({
+      K_SERVER_URL: "http://localhost:8083", // use 'development' unless process.env.NODE_ENV is defined
+    }),
+    
   ],
   /////////////////////////////////////////////////////
   mode: "development",
